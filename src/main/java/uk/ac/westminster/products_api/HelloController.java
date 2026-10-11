@@ -27,5 +27,6 @@ public class HelloController {
     public String date() { return LocalDate.now().toString(); }
     // TODO (Activity 3): add your /goodbye endpoint here.
 
+
 }
 
