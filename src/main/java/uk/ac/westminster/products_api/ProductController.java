@@ -13,7 +13,7 @@ public class ProductController {
 //    @GetMapping("/{id}")
 //    public Product getById(@PathVariable Long id) {
 //        return new Product(id, "Laptop", 999.99);
-//    }
+//
 
     @Autowired
     private ProductService productService;
@@ -29,7 +29,8 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
+//        (This is a temporary fix)
         return productService.addProduct(product);
     }
 
@@ -42,4 +43,12 @@ public class ProductController {
     public List<Product> search(@RequestParam String name){
         return productService.findByName(name);
     }
+
+    @GetMapping("/products/summaries")
+    public List<String> getSummaries(){
+        return productService.getAllSummaries();
+    }
 }
+
+
+
